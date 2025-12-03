@@ -22,32 +22,7 @@
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   
-  <!-- Schema.org markup -->
-  {% if page.layout == 'post' %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ page.title }}",
-    "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ page.author | default: site.author }}"
-    },
-    "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.date | date_to_xmlschema }}",
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "{{ site.url }}{{ page.url }}"
-    }
-  }
-  </script>
-  {% endif %}
+
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -55,16 +30,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-  <!-- Google Analytics -->
-  {% if site.google_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
-  {% endif %}
+
 </head>
 <body>
   {% include header.html %}
