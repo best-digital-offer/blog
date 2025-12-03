@@ -1,0 +1,42 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>{{ site.title }}</h3>
+      <p>{{ site.description }}</p>
+      <div class="social-links">
+        {% if site.social.twitter %}<a href="https://twitter.com/{{ site.social.twitter }}" target="_blank">T</a>{% endif %}
+        {% if site.social.github %}<a href="https://github.com/{{ site.social.github }}" target="_blank">G</a>{% endif %}
+        {% if site.social.linkedin %}<a href="https://linkedin.com/in/{{ site.social.linkedin }}" target="_blank">L</a>{% endif %}
+        {% if site.social.instagram %}<a href="https://instagram.com/{{ site.social.instagram }}" target="_blank">I</a>{% endif %}
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <p><a href="{{ '/' | relative_url }}">Home</a></p>
+      <p><a href="{{ '/blog' | relative_url }}">Blog</a></p>
+      <p><a href="{{ '/about' | relative_url }}">About</a></p>
+      <p><a href="{{ '/contact' | relative_url }}">Contact</a></p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Categories</h3>
+      <p><a href="/categories/technology">Technology</a></p>
+      <p><a href="/categories/lifestyle">Lifestyle</a></p>
+      <p><a href="/categories/business">Business</a></p>
+      <p><a href="/categories/travel">Travel</a></p>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Advertisement</h3>
+      <div class="ad-banner" style="background: #444; border-color: #666; color: #ccc;">
+        <p>Ad Space - 300x250</p>
+        <!-- Replace with actual ad code -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+  </div>
+</footer>

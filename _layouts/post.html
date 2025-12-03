@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<div class="container">
+  <article class="post">
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.author %} • by {{ page.author }}{% endif %}
+        {% if page.categories %} • in {% for category in page.categories %}<a href="/categories/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}
+      </div>
+      {% if page.tags %}
+      <div class="tags">
+        {% for tag in page.tags %}
+        <a href="/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+    
+    <!-- Ad Banner Top -->
+    <div class="ad-banner">
+      <p>Advertisement Space - 728x90 Banner</p>
+      <!-- Replace with actual ad code -->
+    </div>
+    
+    <div class="post-body">
+      {{ content }}
+    </div>
+    
+    <!-- Ad Banner Bottom -->
+    <div class="ad-banner">
+      <p>Advertisement Space - 728x90 Banner</p>
+      <!-- Replace with actual ad code -->
+    </div>
+    
+    <footer class="post-footer">
+      {% if page.tags %}
+      <div class="tags">
+        <strong>Tags:</strong>
+        {% for tag in page.tags %}
+        <a href="/tags/{{ tag | slugify }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+      
+      <div class="post-nav" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url }}" style="float: left;">← {{ page.previous.title | truncate: 30 }}</a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{ page.next.url }}" style="float: right;">{{ page.next.title | truncate: 30 }} →</a>
+        {% endif %}
+        <div style="clear: both;"></div>
+      </div>
+    </footer>
+  </article>
+</div>

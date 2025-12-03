@@ -1,0 +1,50 @@
+# Site settings
+title: "Modern Blog"
+description: "A clean, modern blog about technology, lifestyle, and insights"
+url: "https://yourusername.github.io"
+baseurl: "/blog"
+author: "Your Name"
+email: "your.email@example.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+
+# Social links
+social:
+  twitter: "yourusername"
+  github: "yourusername"
+  linkedin: "yourusername"
+  instagram: "yourusername"
+
+# SEO
+google_analytics: "G-XXXXXXXXXX"
+google_site_verification: "your-verification-code"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
